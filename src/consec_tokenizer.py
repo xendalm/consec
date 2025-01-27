@@ -307,7 +307,7 @@ class DeBERTaTokenizer(ConsecTokenizer):
 
     @property
     def model_max_length(self) -> int:
-        return 24_528  # from paper: deberta-large
+        return 12264 # from paper: deberta-large
 
 
 class MBartTokenizer(ConsecTokenizer):

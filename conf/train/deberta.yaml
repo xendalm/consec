@@ -16,7 +16,6 @@ pl_trainer:
   val_check_interval: 2000
   max_steps: 1_000_000
   precision: 16
-  amp_level: O1
 
 # optimization
 optimizer: radam
