@@ -34,17 +34,17 @@ callbacks:
           max_dependencies: 9
           normalize_ppmi: True
           minimum_ppmi: 0.1
-      greedy_ppmi:
-        _target_: src.scripts.model.continuous_predict.GreedyDepPredictor
-        dependency_finder:
-          _target_: src.dependency_finder.PPMIPolysemyDependencyFinder
-          sense_inventory: ${callbacks.sense_inventory}
-          single_counter_path: data/pmi/lemma_counter.txt
-          pair_counter_path: data/pmi/pairs_counter.txt
-          energy: 0.7
-          max_dependencies: 9
-          normalize_ppmi: True
-          minimum_ppmi: 0.1
+#      greedy_ppmi:
+#        _target_: src.scripts.model.continuous_predict.GreedyDepPredictor
+#        dependency_finder:
+#          _target_: src.dependency_finder.PPMIPolysemyDependencyFinder
+#          sense_inventory: ${callbacks.sense_inventory}
+#          single_counter_path: data/pmi/lemma_counter.txt
+#          pair_counter_path: data/pmi/pairs_counter.txt
+#          energy: 0.7
+#          max_dependencies: 9
+#          normalize_ppmi: True
+#          minimum_ppmi: 0.1
     wordnet_sense_inventory:
       _target_: src.sense_inventories.WordNetSenseInventory
       wn_candidates_path: ${callbacks.wsd_framework_dir}/Data_Validation/candidatesWN30.txt

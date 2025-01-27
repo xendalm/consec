@@ -29,7 +29,7 @@ train_dataset:
   disambiguation_corpus:
     _target_: src.disambiguation_corpora.WordNetCorpus
     raganato_path: data/WSD_Evaluation_Framework/Training_Corpora/SemCor/semcor
-    materialize: True
+    materialize: False
     cached: False
     shuffle: True
   sentence_window: 2  # one prev one next
@@ -39,8 +39,8 @@ train_dataset:
   shuffle_definitions: True
   randomize_dependencies: True
   text_encoding_strategy: ${data.text_encoding_strategy}
-  tokens_per_batch: 1536
-  max_batch_size: 128
+  tokens_per_batch: 1024
+  max_batch_size: 64
   section_size: 45_000
   prebatch: True
   shuffle: True
@@ -56,7 +56,7 @@ validation_dataset:
   disambiguation_corpus:
     _target_: src.disambiguation_corpora.WordNetCorpus
     raganato_path: data/WSD_Evaluation_Framework/Evaluation_Datasets/semeval2007/semeval2007
-    materialize: True
+    materialize: False
     cached: False
   sentence_window: 2  # one prev one next
   randomize_sentence_window: False
@@ -65,8 +65,8 @@ validation_dataset:
   shuffle_definitions: False
   randomize_dependencies: False
   text_encoding_strategy: ${data.text_encoding_strategy}
-  tokens_per_batch: 4096
-  max_batch_size: 1024
+  tokens_per_batch: 2048
+  max_batch_size: 512
   section_size: -1
   prebatch: True
   shuffle: False
